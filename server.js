@@ -13,6 +13,7 @@ import rutasProducto from './views/productos/rutas.js';
 
 import jwt from 'express-jwt';
 import jwks from 'jwks-rsa';
+import authorizacionEstadoUsuario from './middlewares/autorizacionEstadoUsuario.js';
 dotenv.config({ path: './.env' });
 
 
@@ -34,6 +35,7 @@ app.use(Cors());
   });
 
 app.use(jwtCheck);
+app.use(authorizacionEstadoUsuario);
 app.use(rutasVenta);
 app.use(rutasUsuario);
 app.use(rutasProducto);
