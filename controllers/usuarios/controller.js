@@ -23,8 +23,8 @@ callback(err,response);
 }else{
   user.auth0ID = user._id
   delete user._id
-  user.rol = "Admin"
-  user.Estado = "Inactivo"
+  user.rol = "sin rol"
+  user.Estado = "Pendiente"
 await crearUsuario(user,(err,respuesta)=> callback(err,user));
 }
 
